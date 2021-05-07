@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/server.js",
-    "test": "jest"
+    "pretest": "cross-env NODE_ENV=test npx sequelize db:migrate",
+    "test": "cross-env NODE_ENV=test jest",
+    "prottest": "cross-env NODE_ENV=test npx sequelize db:migrate:undo:all"
   },
   "keywords": [],
   "author": "",
